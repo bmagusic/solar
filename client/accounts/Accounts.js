@@ -1,3 +1,20 @@
+var myLogoutFunc = function () {
+	//console.log('Hello');
+	Session.set('nav-toggle', '');
+	FlowRouter.go('/');
+}
+
+AccountsTemplates.configure({
+	//Behaviour
+	confirmPassword: false,
+	
+	// Privacy Policy and Terms of Use
+    privacyUrl: 'privacy',
+
+    // Hooks
+    onLogoutHook: myLogoutFunc
+});
+
 AccountsTemplates.addFields([
 	{
 		_id: 'firstName',
